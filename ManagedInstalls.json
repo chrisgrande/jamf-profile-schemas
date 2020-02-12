@@ -20,7 +20,7 @@
     "properties": {
         "AppleSoftwareUpdatesOnly": {
             "title": "Install Apple Software Updates Only",
-            "description": "Only install Apple Updates",
+            "description": "Deafult is false. If true, only install updates from an Apple Software Update server. No Munki repository is needed or used.",
             "propertyOrder": 10,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -39,7 +39,7 @@
         },
         "InstallAppleSoftwareUpdates": {
             "title": "Enable Munki to install Apple Software Updates",
-            "description": "Allows Munki to manage Apple Software Updates",
+            "description": "Default is false. If true, install updates from an Apple Software Update server, in addition to 'regular' Munki updates.",
             "propertyOrder": 20,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -58,7 +58,7 @@
         },
         "UnattendedAppleUpdates": {
             "title": "Enable Munki to install Apple Software Updates automatically",
-            "description": "Allows Munki to manage Apple Software Updates automatically",
+            "description": "Default is false. If true, updates that declare no 'must-close' applications, or have one or more 'must-close' applications, none of which is running, and do not require a logout or restart will be installed as part of a normal periodic background run without notifying the user. (OS X 10.10+, Munki 2.5+)",
             "propertyOrder": 30,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -77,7 +77,7 @@
         },
         "SoftwareRepoURL": {
             "title": "Location of Munki Repo",
-            "description": "Web server containing the Munki repo",
+            "description": "Default is http://munki.(domain of client)/repo. Base URL for Munki repository",
             "propertyOrder": 40,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -96,7 +96,7 @@
         },
         "PackageURL": {
             "title": "Location of software packages",
-            "description": "Web server containing the pkg files, default is SoftwareRepoURL/pkgs",
+            "description": "Default is SoftwareRepoURL/pkgs. Base URL for Munki pkgs. Useful if your packages are served from a different server than your catalogs or manifests.",
             "propertyOrder": 50,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -115,7 +115,7 @@
         },
         "CatalogURL": {
             "title": "Location of software catalogs",
-            "description": "Web server containing the catalog files, default is SoftwareRepoURL/catalogs",
+            "description": "Default is SoftwareRepoURL/catalogs. Base URL for Munki catalogs. Useful if your catalogs are served from a different server than your packages or manifests.",
             "propertyOrder": 60,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -134,7 +134,7 @@
         },
         "ManifestURL": {
             "title": "Location of software manifests",
-            "description": "Web server containing the software manifest files, default is SoftwareRepoURL/manifests",
+            "description": "Default is SoftwareRepoURL/manifests. Base URL for Munki manifests. Useful if your manifests are served from a different server than your catalogs or manifests.",
             "propertyOrder": 70,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -153,7 +153,7 @@
         },
         "IconURL": {
             "title": "Location of icon files",
-            "description": "Web server containing the software manifest files, default is SoftwareRepoURL/icons",
+            "description": "Default is SoftwareRepoURL/icons. Base URL for product icons. Useful if your icons are served from a different server or different directory than the default.",
             "propertyOrder": 80,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -172,7 +172,7 @@
         },
         "ClientResourceURL": {
             "title": "Location of client resource files for Managed Software Center customization.",
-            "description": "Web server containing the client resource files for Managed Software Center customization, default is SoftwareRepoURL/client_resources",
+            "description": "Default is SoftwareRepoURL/client_resources. Base URL for custom client resources for Managed Software Center. Useful if your resources are served from a different server or different directory than the default.",
             "propertyOrder": 90,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -191,7 +191,7 @@
         },
         "ClientResourcesFilename": {
             "title": "Name of client resource file for Managed Software Center customization.",
-            "description": "Web server containing the client resource files for Managed Software Center customization, default is SoftwareRepoURL/client_resources",
+            "description": "Default is manifest name.zip or site_default.zip. Specific filename to use when requesting custom client resources.",
             "propertyOrder": 110,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -210,7 +210,7 @@
         },
         "HelpURL": {
             "title": "Set Help URL",
-            "description": "Link for Help Documentation, Default is None.",
+            "description": "Default is None. If defined, a URL to open/display when the user selects 'Managed Software Center Help' from Managed Software Center's Help menu.",
             "propertyOrder": 120,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -229,7 +229,7 @@
         },
         "ClientIdentifier": {
             "title": "Client Identifier",
-            "description": "While you can define ClientIdentifier in Munki's preferences to cause Munki to request a specific manifest from the Munki server, it can be more useful and powerful to leave ClientIdentifier undefined (or empty) and let Munki's default manifest resolution take over.",
+            "description": "Identifier for Munki client. Usually is the same as a manifest name on the Munki server. If this is empty or undefined, Munki will attempt the following identifiers, in order: fully-qualified hostname, 'short' hostname, serial number and finally, 'site_default'",
             "propertyOrder": 130,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -248,7 +248,7 @@
         },
         "ManagedInstallDir": {
             "title": "Managed Installs Location",
-            "description": "Folder where munki keeps its data on the client, default is /Library/Managed Installs",
+            "description": "Default is /Library/Managed Installs. Folder where munki keeps its data on the client.",
             "propertyOrder": 130,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -267,7 +267,7 @@
         },
         "LogFile": {
             "title": "Log File Location",
-            "description": "Primary log is written to this file, default is /Library/Managed Installs/Logs/ManagedSoftwareUpdate.log",
+            "description": "Default is /Library/Managed Installs/Logs/ManagedSoftwareUpdate.log. Primary log is written to this file.",
             "propertyOrder": 130,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -567,6 +567,215 @@
             ],
             "options": {
                 "infoText": "Key: SuppressLoginwindowInstall"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "SuppressStopButtonOnInstall": {
+            "title": "Suppress Stop Button On Install",
+            "description": "Default is false, If true, Managed Software Center will hide the stop button while installing or removing software, preventing users from interrupting the install.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SuppressStopButtonOnInstall"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "InstallRequiresLogout": {
+            "title": "Install Requires Logout",
+            "description": "Deafult is false, If true, Managed Software Center will require a logout for all installs or removals.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: InstallRequiresLogout"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "ShowRemovalDetail": {
+            "title": "Show Removal Detail",
+            "description": "Default is false. This preference is no longer supported. In versions of Munki prior to 2.0: if true, Managed Software Updates.app will display detail for scheduled removals.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: ShowRemovalDetail"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "MSULogEnabled": {
+            "title": "MSU Log Enabled",
+            "description": "Default is false. Log user actions in the GUI. See [MSU-Logging]",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MSULogEnabled"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "MSUDebugLogEnabled": {
+            "title": "MSU Debug Log Enabled",
+            "description": "Deafult is false. Debug logging for Managed Software Center.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MSUDebugLogEnabled"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "LocalOnlyManifest": {
+            "title": "Local Only Manifest",
+            "description": "Deafult is empty. Defines the name of your LocalOnlyManifest. Setting this activates the feature. Unsetting it means Munki will remove the file on the next run.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: LocalOnlyManifest"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "FollowHTTPRedirects": {
+            "title": "Follow HTTP Redirects",
+            "description": "Default is none. Defines whether Munki will follow all, some or no redirects from the web server",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: FollowHTTPRedirects"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "IgnoreSystemProxies": {
+            "title": "Ignore System Proxies",
+            "description": "Default is false. If true, HTTP and/or HTTPS proxies set system-wide will be ignored, connections will be made directly.            ",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: IgnoreSystemProxies"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "PerformAuthRestarts": {
+            "title": "Perform Auth Restarts",
+            "description": "Default is false. (New in Munki 3) If true, Munki will attempt to perform a filevault auth restart.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: PerformAuthRestarts"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "RecoveryKeyFile": {
+            "title": "Recovery Key File",
+            "description": "Deafult is none. (New in Munki 3) Absolute path to a plist file containing filevault credentials in key/value format. Used to perform auth restarts.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: RecoveryKeyFile"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "ShowOptionalInstallsForHigherOSVersions": {
+            "title": "Show Optional Installs For Higher OS Versions",
+            "description": "Default is false. (New in Munki 3.1) If true, Managed Software Center.app will show optional installs and updates that apply to macOS versions higher than the currently installed version.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: ShowOptionalInstallsForHigherOSVersions"
             },
             "links": [{
                 "rel": "More Information",
