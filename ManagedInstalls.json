@@ -1,0 +1,180 @@
+{
+    "title": "ManagedInstalls",
+    "description": "Preference Domain: ManagedInstall.plist - Munki Configuration",
+    "__version": "1.0",
+    "__feedback": "cgrande@mxcc.edu",
+    "type": "object",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "AppleSoftwareUpdatesOnly": {
+            "title": "Install Apple Software Updates Only",
+            "description": "Only install Apple Updated",
+            "propertyOrder": 10,
+            "type": "boolean",
+            "default": false,
+            "options": {
+                "infoText": "Key: AppleSoftwareUpdatesOnly"
+            },
+            "links": [{
+                "rel": "More information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "InstallAppleSoftwareUpdates": {
+            "title": "Enable Munki to install Apple Software Updates",
+            "description": "Allows Munki to manage Apple Software Updates",
+            "propertyOrder": 20,
+            "type": "boolean",
+            "default": false,
+            "options": {
+                "infoText": "Key: InstallAppleSoftwareUpdates"
+            },
+            "links": [{
+                "rel": "More information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "UnattendedAppleUpdates": {
+            "title": "Enable Munki to install Apple Software Updates automatically",
+            "description": "Allows Munki to manage Apple Software Updates automatically",
+            "propertyOrder": 30,
+            "type": "boolean",
+            "default": false,
+            "options": {
+                "infoText": "Key: UnattendedAppleUpdates"
+            },
+            "links": [{
+                "rel": "More information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "SoftwareRepoURL": {
+            "title": "Location of Munki Repo",
+            "description": "Web server containing the Munki repo",
+            "propertyOrder": 40,
+            "type": "string",
+            "default": "http://munki/repo",
+            "options": {
+                "infoText": "Key: SoftwareRepoURL"
+            },
+            "links": [{
+                "rel": "Default Repo Detection",
+                "href": "https://github.com/munki/munki/wiki/Default-Repo-Detection"
+            }]
+        },
+        "PackageURL": {
+            "title": "Location of software packages",
+            "description": "Web server containing the pkg files, default is SoftwareRepoURL/pkgs",
+            "propertyOrder": 50,
+            "type": "string",
+            "default": "",
+            "options": {
+                "infoText": "Key: PackageURL"
+            },
+            "links": [{
+                "rel": "Default Repo Detection",
+                "href": "https://github.com/munki/munki/wiki/Default-Repo-Detection"
+            }]
+        },
+        "CatalogURL": {
+            "title": "Location of software catalogs",
+            "description": "Web server containing the catalog files, default is SoftwareRepoURL/catalogs",
+            "propertyOrder": 60,
+            "type": "string",
+            "default": "",
+            "options": {
+                "infoText": "Key: CatalogURL"
+            },
+            "links": [{
+                "rel": "Default Repo Detection",
+                "href": "https://github.com/munki/munki/wiki/Default-Repo-Detection"
+            }]
+        },
+        "ManifestURL": {
+            "title": "Location of software manifests",
+            "description": "Web server containing the software manifest files, default is SoftwareRepoURL/manifests",
+            "propertyOrder": 70,
+            "type": "string",
+            "default": "",
+            "options": {
+                "infoText": "Key: ManifestURL"
+            },
+            "links": [{
+                "rel": "Default Repo Detection",
+                "href": "https://github.com/munki/munki/wiki/Default-Repo-Detection"
+            }]
+        },
+        "IconURL": {
+            "title": "Location of icon files",
+            "description": "Web server containing the software manifest files, default is SoftwareRepoURL/icons",
+            "propertyOrder": 80,
+            "type": "string",
+            "default": "",
+            "options": {
+                "infoText": "Key: IconURL"
+            },
+            "links": [{
+                "rel": "Default Repo Detection",
+                "href": "https://github.com/munki/munki/wiki/Default-Repo-Detection"
+            }]
+        },
+        "ClientResourceURL": {
+            "title": "Location of client resource files for Managed Software Center customization.",
+            "description": "Web server containing the client resource files for Managed Software Center customization, default is SoftwareRepoURL/client_resources",
+            "propertyOrder": 90,
+            "type": "string",
+            "default": "",
+            "options": {
+                "infoText": "Key: ClientResourceURL"
+            },
+            "links": [{
+                "rel": "Default Repo Detection",
+                "href": "https://github.com/munki/munki/wiki/Default-Repo-Detection"
+            }]
+        },
+        "ClientResourcesFilename": {
+            "title": "Name of client resource file for Managed Software Center customization.",
+            "description": "Web server containing the client resource files for Managed Software Center customization, default is SoftwareRepoURL/client_resources",
+            "propertyOrder": 110,
+            "type": "string",
+            "default": "",
+            "options": {
+                "infoText": "Key: ClientResourcesFilename"
+            },
+            "links": [{
+                "rel": "Default Repo Detection",
+                "href": "https://github.com/munki/munki/wiki/Default-Repo-Detection"
+            }]
+        },
+        "HelpURL": {
+            "title": "Set Help URL",
+            "description": "Link for Help Documentation, Default is None.",
+            "propertyOrder": 120,
+            "type": "string",
+            "default": "",
+            "options": {
+                "infoText": "Key: HelpURL"
+            },
+            "links": [{
+                "rel": "Default Repo Detection",
+                "href": "https://github.com/munki/munki/wiki/Default-Repo-Detection"
+            }]
+        },
+        "ClientIdentifier": {
+            "title": "Client Identifier",
+            "description": "While you can define ClientIdentifier in Munki's preferences to cause Munki to request a specific manifest from the Munki server, it can be more useful and powerful to leave ClientIdentifier undefined (or empty) and let Munki's default manifest resolution take over.",
+            "propertyOrder": 130,
+            "type": "string",
+            "default": "",
+            "options": {
+                "infoText": "Key: ClientIdentifier"
+            },
+            "links": [{
+                "rel": "Default Manifest Resolution",
+                "href": "https://github.com/munki/munki/wiki/Default-Manifest-Resolution"
+            }]
+        }
+    }
+}
