@@ -7,13 +7,28 @@
     "options": {
         "remove_empty_properties": true
     },
+    "definitions": {
+        "policy_group": {
+            "type": "object",
+            "format": "grid",
+            "options": {
+                "collapsed": true,
+                "disable_properties": true
+            }
+        }
+    },
     "properties": {
         "AppleSoftwareUpdatesOnly": {
             "title": "Install Apple Software Updates Only",
             "description": "Only install Apple Updates",
             "propertyOrder": 10,
-            "type": "boolean",
-            "default": false,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
             "options": {
                 "infoText": "Key: AppleSoftwareUpdatesOnly"
             },
@@ -26,8 +41,13 @@
             "title": "Enable Munki to install Apple Software Updates",
             "description": "Allows Munki to manage Apple Software Updates",
             "propertyOrder": 20,
-            "type": "boolean",
-            "default": false,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
             "options": {
                 "infoText": "Key: InstallAppleSoftwareUpdates"
             },
@@ -40,8 +60,13 @@
             "title": "Enable Munki to install Apple Software Updates automatically",
             "description": "Allows Munki to manage Apple Software Updates automatically",
             "propertyOrder": 30,
-            "type": "boolean",
-            "default": false,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
             "options": {
                 "infoText": "Key: UnattendedAppleUpdates"
             },
@@ -54,8 +79,13 @@
             "title": "Location of Munki Repo",
             "description": "Web server containing the Munki repo",
             "propertyOrder": 40,
-            "type": "string",
-            "default": "http://munki/repo",
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
             "options": {
                 "infoText": "Key: SoftwareRepoURL"
             },
@@ -68,8 +98,13 @@
             "title": "Location of software packages",
             "description": "Web server containing the pkg files, default is SoftwareRepoURL/pkgs",
             "propertyOrder": 50,
-            "type": "string",
-            "default": "",
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
             "options": {
                 "infoText": "Key: PackageURL"
             },
@@ -82,8 +117,13 @@
             "title": "Location of software catalogs",
             "description": "Web server containing the catalog files, default is SoftwareRepoURL/catalogs",
             "propertyOrder": 60,
-            "type": "string",
-            "default": "",
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
             "options": {
                 "infoText": "Key: CatalogURL"
             },
@@ -96,8 +136,13 @@
             "title": "Location of software manifests",
             "description": "Web server containing the software manifest files, default is SoftwareRepoURL/manifests",
             "propertyOrder": 70,
-            "type": "string",
-            "default": "",
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
             "options": {
                 "infoText": "Key: ManifestURL"
             },
@@ -110,8 +155,13 @@
             "title": "Location of icon files",
             "description": "Web server containing the software manifest files, default is SoftwareRepoURL/icons",
             "propertyOrder": 80,
-            "type": "string",
-            "default": "",
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
             "options": {
                 "infoText": "Key: IconURL"
             },
@@ -124,8 +174,13 @@
             "title": "Location of client resource files for Managed Software Center customization.",
             "description": "Web server containing the client resource files for Managed Software Center customization, default is SoftwareRepoURL/client_resources",
             "propertyOrder": 90,
-            "type": "string",
-            "default": "",
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
             "options": {
                 "infoText": "Key: ClientResourceURL"
             },
@@ -138,8 +193,13 @@
             "title": "Name of client resource file for Managed Software Center customization.",
             "description": "Web server containing the client resource files for Managed Software Center customization, default is SoftwareRepoURL/client_resources",
             "propertyOrder": 110,
-            "type": "string",
-            "default": "",
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
             "options": {
                 "infoText": "Key: ClientResourcesFilename"
             },
@@ -152,8 +212,13 @@
             "title": "Set Help URL",
             "description": "Link for Help Documentation, Default is None.",
             "propertyOrder": 120,
-            "type": "string",
-            "default": "",
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
             "options": {
                 "infoText": "Key: HelpURL"
             },
@@ -166,14 +231,114 @@
             "title": "Client Identifier",
             "description": "While you can define ClientIdentifier in Munki's preferences to cause Munki to request a specific manifest from the Munki server, it can be more useful and powerful to leave ClientIdentifier undefined (or empty) and let Munki's default manifest resolution take over.",
             "propertyOrder": 130,
-            "type": "string",
-            "default": "",
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
             "options": {
                 "infoText": "Key: ClientIdentifier"
             },
             "links": [{
                 "rel": "Default Manifest Resolution",
                 "href": "https://github.com/munki/munki/wiki/Default-Manifest-Resolution"
+            }]
+        },
+        "ManagedInstallDir": {
+            "title": "Managed Installs Location",
+            "description": "Folder where munki keeps its data on the client, default is /Library/Managed Installs",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: ManagedInstallDir"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "LogFile": {
+            "title": "Log File Location",
+            "description": "Primary log is written to this file, default is /Library/Managed Installs/Logs/ManagedSoftwareUpdate.log",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: LogFile"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "LogToSyslog": {
+            "title": "Write Munki Logs to the System Log",
+            "description": "Default is false. If true, log to /var/log/system.log in addition to ManagedSoftwareUpdate.log",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: LogToSyslog"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "LoggingLevel": {
+            "title": "Logging Level",
+            "description": "Default is 1.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ],
+            "options": {
+                "infoText": "Key: LoggingLevel"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "DaysBetweenNotifications": {
+            "title": "Number of days between user notifications from Managed Software Update",
+            "description": "Default is 1. Higher values cause more detail to be written to the primary log.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ],
+            "options": {
+                "infoText": "Key: DaysBetweenNotifications"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
             }]
         }
     }
