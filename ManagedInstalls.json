@@ -10,7 +10,7 @@
     "properties": {
         "AppleSoftwareUpdatesOnly": {
             "title": "Install Apple Software Updates Only",
-            "description": "Only install Apple Updated",
+            "description": "Only install Apple Updates",
             "propertyOrder": 10,
             "type": "boolean",
             "default": false,
