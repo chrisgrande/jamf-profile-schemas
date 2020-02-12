@@ -144,8 +144,8 @@
                 "infoText": "Key: ClientResourcesFilename"
             },
             "links": [{
-                "rel": "Default Repo Detection",
-                "href": "https://github.com/munki/munki/wiki/Default-Repo-Detection"
+                "rel": "More information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
             }]
         },
         "HelpURL": {
@@ -158,8 +158,8 @@
                 "infoText": "Key: HelpURL"
             },
             "links": [{
-                "rel": "Default Repo Detection",
-                "href": "https://github.com/munki/munki/wiki/Default-Repo-Detection"
+                "rel": "More information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
             }]
         },
         "ClientIdentifier": {
