@@ -323,8 +323,8 @@
             }]
         },
         "DaysBetweenNotifications": {
-            "title": "Number of days between user notifications from Managed Software Update",
-            "description": "Default is 1. Higher values cause more detail to be written to the primary log.",
+            "title": "Number of Days Between User Notifications",
+            "description": "Default is 1. Number of days between user notifications from Managed Software Update.",
             "propertyOrder": 130,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -335,6 +335,238 @@
             ],
             "options": {
                 "infoText": "Key: DaysBetweenNotifications"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "UseNotificationCenterDays": {
+            "title":  "Days Notification Center Notifications",
+            "description": "Default is 3. Number of days Notification Center notifications should be attempted before switching to launching Manged Software Center.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ],
+            "options": {
+                "infoText": "Key: UseNotificationCenterDays"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "UseClientCertificate": {
+            "title":  "Use an SSL Cient Certificate",
+            "description": "Default is false. If true, use an SSL client certificate when communicating with the munki server. Requires an https:// URL for the munki repo.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: UseClientCertificate"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "UseClientCertificateCNAsClientIdentifier": {
+            "title": "Use CN of the client certificate as the Client Identifier",
+            "description": "Default is false. If true, use the CN of the client certificate as the Client Identifier. Used in combination with the UseClientCertificate key",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: UseClientCertificate"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "SoftwareRepoCAPath": {
+            "title": "Path to Repo CA Directory",
+            "description": "Default is empty. Path to the directory that stores your CA certificate(s).",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SoftwareRepoCAPath"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "SoftwareRepoCACertificate": {
+            "title": "Software Repo CA Certificate Path",
+            "description": "Default is /Library/Managed Installs/certs/ca.pem. Absolute path to your CA Certificate.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SoftwareRepoCACertificate"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "ClientCertificatePath": {
+            "title": "Client Certificate Path",
+            "description": "Default is /Library/Managed Installs/certs/[munki.pem|client.pem|cert.pem]. Absolute path to a client certificate. There are 3 defaults for this key. Concatenated cert/key PEM file accepted.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: ClientCertificatePath"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "ClientKeyPath": {
+            "title": "Client Private Key Path",
+            "description": "Default is empty. Absolute path to a client private key.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: ClientKeyPath"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "AdditionalHttpHeaders": {
+            "title": "Additional HTTP Headers",
+            "description": "Default is empty. This key provides the ability to specify custom HTTP headers to be sent with all curl() HTTP requests. AdditionalHttpHeaders must be an array of strings with valid HTTP header format.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Custom HTTP Header"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "Key: AdditionalHttpHeaders"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "PackageVerificationMode": {
+            "title": "Package Verification Mode",
+            "description": "Default is hash. Controls how Munki verifies the integrity of downloaded packages. Possible values are: none: No integrity check is performed. hash: Integrity check is performed if package info contains checksum information. hash_strict: Integrity check is performed, and fails if package info does not contain checksum information.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: PackageVerificationMode"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "SuppressUserNotification": {
+            "title": "Suppress User Notification",
+            "description": "Default is false. If true, Managed Software Center will never notify the user of available updates. Managed Software Center can still be manually invoked to discover and install updates.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SuppressUserNotification"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "SuppressAutoInstall": {
+            "title": "Suppress Auto Install",
+            "description": "Default is false. If true, Munki will not automatically install or remove items.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SuppressAutoInstall"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "SuppressLoginwindowInstall": {
+            "title": "Suppress Auto Install",
+            "description": "Default is false. If true, Munki will not install items while idle at the loginwindow except for those marked for unattended_install or unattended_uninstall.",
+            "propertyOrder": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SuppressLoginwindowInstall"
             },
             "links": [{
                 "rel": "More Information",
