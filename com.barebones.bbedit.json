@@ -109,7 +109,7 @@
     },
     "UserDeclinedSandboxAccess": {
         "title": "Disable Sandbox Prompt",
-        "description": "Defaults to false. Set to true to stop the first run Sandbox prompt (Version 12.6 or later). This just supresses the prompt and is best used in situations where BBEdit is just used as a simple text editor. Full access is required for BBEdit's full functionality. See https://www.barebones.com/support/bbedit/notes-12.6.html for more information.",
+        "description": "Defaults to none. Set to true to stop the first run Sandbox prompt (Version 12.6 or later). This just supresses the prompt and is best used in situations where BBEdit is just used as a simple text editor. Full access is required for BBEdit's full functionality. See https://www.barebones.com/support/bbedit/notes-12.6.html for more information.",
         "propertyOrder": 70,
         "anyOf": [
             {"type": "null", "title": "Not Configured"},
