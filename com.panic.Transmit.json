@@ -1,0 +1,65 @@
+{
+    "title": "com.panic.Transmit",
+    "description": "Preference Domain: com.panic.Transmit.plist - Panic Transmit 5",
+    "__version": "1.0",
+    "__feedback": "cgrande@mxcc.edu",
+    "type": "object",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "definitions": {
+        "policy_group": {
+            "type": "object",
+            "format": "grid",
+            "options": {
+                "collapsed": true,
+                "disable_properties": true
+            }
+        }
+    },
+    "SUAutomaticallyUpdate": {
+        "title": "Automatically Install Updates",
+        "description": "Default is false. Setting to true will enable automatic updates installs",
+        "propertyOrder": 10,
+        "anyOf": [
+            {"type": "null", "title": "Not Configured"},
+            {
+                "title": "Configured",
+                "type": "boolean"
+            }
+        ],
+        "options": {
+            "infoText": "Key: SUAutomaticallyUpdate"
+        }
+    },
+    "SUEnableAutomaticChecks": {
+        "title": "Enable Automatic Update Software Checks",
+        "description": "Default is true. Setting to false will disable automatic software checks.",
+        "propertyOrder": 20,
+        "anyOf": [
+            {"type": "null", "title": "Not Configured"},
+            {
+                "title": "Configured",
+                "type": "boolean"
+            }
+        ],
+        "options": {
+            "infoText": "Key: SUEnableAutomaticChecks"
+        }
+    },
+    "SerialNumber5": {
+        "title": "Transmit 5 Serial Number",
+        "description": "Default is empty. Set Transmit 5 Serial Number",
+        "propertyOrder": 30,
+        "anyOf": [
+            {"type": "null", "title": "Not Configured"},
+            {
+                "title": "Configured",
+                "type": "string"
+            }
+        ],
+        "options": {
+            "infoText": "Key: SerialNumber5"
+        }
+    }
+}
