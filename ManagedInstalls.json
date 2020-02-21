@@ -249,7 +249,7 @@
         "ManagedInstallDir": {
             "title": "Managed Installs Location",
             "description": "Default is /Library/Managed Installs. Folder where munki keeps its data on the client.",
-            "propertyOrder": 130,
+            "propertyOrder": 140,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -268,7 +268,7 @@
         "LogFile": {
             "title": "Log File Location",
             "description": "Default is /Library/Managed Installs/Logs/ManagedSoftwareUpdate.log. Primary log is written to this file.",
-            "propertyOrder": 130,
+            "propertyOrder": 150,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -287,7 +287,7 @@
         "LogToSyslog": {
             "title": "Write Munki Logs to the System Log",
             "description": "Default is false. If true, log to /var/log/system.log in addition to ManagedSoftwareUpdate.log",
-            "propertyOrder": 130,
+            "propertyOrder": 160,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -306,7 +306,7 @@
         "LoggingLevel": {
             "title": "Logging Level",
             "description": "Default is 1.",
-            "propertyOrder": 130,
+            "propertyOrder": 170,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -325,7 +325,7 @@
         "DaysBetweenNotifications": {
             "title": "Number of Days Between User Notifications",
             "description": "Default is 1. Number of days between user notifications from Managed Software Update.",
-            "propertyOrder": 130,
+            "propertyOrder": 180,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -344,7 +344,7 @@
         "UseNotificationCenterDays": {
             "title":  "Days Notification Center Notifications",
             "description": "Default is 3. Number of days Notification Center notifications should be attempted before switching to launching Manged Software Center.",
-            "propertyOrder": 130,
+            "propertyOrder": 190,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -363,7 +363,7 @@
         "UseClientCertificate": {
             "title":  "Use an SSL Cient Certificate",
             "description": "Default is false. If true, use an SSL client certificate when communicating with the munki server. Requires an https:// URL for the munki repo.",
-            "propertyOrder": 130,
+            "propertyOrder": 200,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -382,7 +382,7 @@
         "UseClientCertificateCNAsClientIdentifier": {
             "title": "Use CN of the client certificate as the Client Identifier",
             "description": "Default is false. If true, use the CN of the client certificate as the Client Identifier. Used in combination with the UseClientCertificate key",
-            "propertyOrder": 130,
+            "propertyOrder": 210,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -401,7 +401,7 @@
         "SoftwareRepoCAPath": {
             "title": "Path to Repo CA Directory",
             "description": "Default is empty. Path to the directory that stores your CA certificate(s).",
-            "propertyOrder": 130,
+            "propertyOrder": 220,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -420,7 +420,7 @@
         "SoftwareRepoCACertificate": {
             "title": "Software Repo CA Certificate Path",
             "description": "Default is /Library/Managed Installs/certs/ca.pem. Absolute path to your CA Certificate.",
-            "propertyOrder": 130,
+            "propertyOrder": 230,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -439,7 +439,7 @@
         "ClientCertificatePath": {
             "title": "Client Certificate Path",
             "description": "Default is /Library/Managed Installs/certs/[munki.pem|client.pem|cert.pem]. Absolute path to a client certificate. There are 3 defaults for this key. Concatenated cert/key PEM file accepted.",
-            "propertyOrder": 130,
+            "propertyOrder": 240,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -458,7 +458,7 @@
         "ClientKeyPath": {
             "title": "Client Private Key Path",
             "description": "Default is empty. Absolute path to a client private key.",
-            "propertyOrder": 130,
+            "propertyOrder": 250,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -477,7 +477,7 @@
         "AdditionalHttpHeaders": {
             "title": "Additional HTTP Headers",
             "description": "Default is empty. This key provides the ability to specify custom HTTP headers to be sent with all curl() HTTP requests. AdditionalHttpHeaders must be an array of strings with valid HTTP header format.",
-            "propertyOrder": 130,
+            "propertyOrder": 260,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -500,7 +500,7 @@
         "PackageVerificationMode": {
             "title": "Package Verification Mode",
             "description": "Default is hash. Controls how Munki verifies the integrity of downloaded packages. Possible values are: none: No integrity check is performed. hash: Integrity check is performed if package info contains checksum information. hash_strict: Integrity check is performed, and fails if package info does not contain checksum information.",
-            "propertyOrder": 130,
+            "propertyOrder": 270,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -519,7 +519,7 @@
         "SuppressUserNotification": {
             "title": "Suppress User Notification",
             "description": "Default is false. If true, Managed Software Center will never notify the user of available updates. Managed Software Center can still be manually invoked to discover and install updates.",
-            "propertyOrder": 130,
+            "propertyOrder": 280,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -538,7 +538,7 @@
         "SuppressAutoInstall": {
             "title": "Suppress Auto Install",
             "description": "Default is false. If true, Munki will not automatically install or remove items.",
-            "propertyOrder": 130,
+            "propertyOrder": 290,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -557,7 +557,7 @@
         "SuppressLoginwindowInstall": {
             "title": "Suppress Auto Install",
             "description": "Default is false. If true, Munki will not install items while idle at the loginwindow except for those marked for unattended_install or unattended_uninstall.",
-            "propertyOrder": 130,
+            "propertyOrder": 300,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -576,7 +576,7 @@
         "SuppressStopButtonOnInstall": {
             "title": "Suppress Stop Button On Install",
             "description": "Default is false, If true, Managed Software Center will hide the stop button while installing or removing software, preventing users from interrupting the install.",
-            "propertyOrder": 130,
+            "propertyOrder": 310,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -595,7 +595,7 @@
         "InstallRequiresLogout": {
             "title": "Install Requires Logout",
             "description": "Deafult is false, If true, Managed Software Center will require a logout for all installs or removals.",
-            "propertyOrder": 130,
+            "propertyOrder": 320,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -614,7 +614,7 @@
         "ShowRemovalDetail": {
             "title": "Show Removal Detail",
             "description": "Default is false. This preference is no longer supported. In versions of Munki prior to 2.0: if true, Managed Software Updates.app will display detail for scheduled removals.",
-            "propertyOrder": 130,
+            "propertyOrder": 330,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -633,7 +633,7 @@
         "MSULogEnabled": {
             "title": "MSU Log Enabled",
             "description": "Default is false. Log user actions in the GUI. See [MSU-Logging]",
-            "propertyOrder": 130,
+            "propertyOrder": 340,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -652,7 +652,7 @@
         "MSUDebugLogEnabled": {
             "title": "MSU Debug Log Enabled",
             "description": "Deafult is false. Debug logging for Managed Software Center.",
-            "propertyOrder": 130,
+            "propertyOrder": 350,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -671,7 +671,7 @@
         "LocalOnlyManifest": {
             "title": "Local Only Manifest",
             "description": "Deafult is empty. Defines the name of your LocalOnlyManifest. Setting this activates the feature. Unsetting it means Munki will remove the file on the next run.",
-            "propertyOrder": 130,
+            "propertyOrder": 360,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -690,7 +690,7 @@
         "FollowHTTPRedirects": {
             "title": "Follow HTTP Redirects",
             "description": "Default is none. Defines whether Munki will follow all, some or no redirects from the web server",
-            "propertyOrder": 130,
+            "propertyOrder": 370,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -709,7 +709,7 @@
         "IgnoreSystemProxies": {
             "title": "Ignore System Proxies",
             "description": "Default is false. If true, HTTP and/or HTTPS proxies set system-wide will be ignored, connections will be made directly.            ",
-            "propertyOrder": 130,
+            "propertyOrder": 380,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -728,7 +728,7 @@
         "PerformAuthRestarts": {
             "title": "Perform Auth Restarts",
             "description": "Default is false. (New in Munki 3) If true, Munki will attempt to perform a filevault auth restart.",
-            "propertyOrder": 130,
+            "propertyOrder": 390,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -747,7 +747,7 @@
         "RecoveryKeyFile": {
             "title": "Recovery Key File",
             "description": "Deafult is none. (New in Munki 3) Absolute path to a plist file containing filevault credentials in key/value format. Used to perform auth restarts.",
-            "propertyOrder": 130,
+            "propertyOrder": 400,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -766,7 +766,7 @@
         "ShowOptionalInstallsForHigherOSVersions": {
             "title": "Show Optional Installs For Higher OS Versions",
             "description": "Default is false. (New in Munki 3.1) If true, Managed Software Center.app will show optional installs and updates that apply to macOS versions higher than the currently installed version.",
-            "propertyOrder": 130,
+            "propertyOrder": 410,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
