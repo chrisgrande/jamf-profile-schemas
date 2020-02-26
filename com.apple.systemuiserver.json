@@ -29,7 +29,7 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "title": "Menu Item Paths"
+                        "title": "Menu Item Path"
                     }
                 }
             ],
