@@ -17,49 +17,51 @@
             }
         }
     },
-    "SUAutomaticallyUpdate": {
-        "title": "Automatically Install Updates",
-        "description": "Default is false. Setting to true will enable automatic updates installs",
-        "propertyOrder": 10,
-        "anyOf": [
-            {"type": "null", "title": "Not Configured"},
-            {
-                "title": "Configured",
-                "type": "boolean"
+    "properties": {
+        "SUAutomaticallyUpdate": {
+            "title": "Automatically Install Updates",
+            "description": "Default is false. Setting to true will enable automatic updates installs",
+            "propertyOrder": 10,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SUAutomaticallyUpdate"
             }
-        ],
-        "options": {
-            "infoText": "Key: SUAutomaticallyUpdate"
-        }
-    },
-    "SUEnableAutomaticChecks": {
-        "title": "Enable Automatic Update Software Checks",
-        "description": "Default is true. Setting to false will disable automatic software checks.",
-        "propertyOrder": 20,
-        "anyOf": [
-            {"type": "null", "title": "Not Configured"},
-            {
-                "title": "Configured",
-                "type": "boolean"
+        },
+        "SUEnableAutomaticChecks": {
+            "title": "Enable Automatic Update Software Checks",
+            "description": "Default is true. Setting to false will disable automatic software checks.",
+            "propertyOrder": 20,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SUEnableAutomaticChecks"
             }
-        ],
-        "options": {
-            "infoText": "Key: SUEnableAutomaticChecks"
-        }
-    },
-    "SerialNumber5": {
-        "title": "Transmit 5 Serial Number",
-        "description": "Default is empty. Set Transmit 5 Serial Number",
-        "propertyOrder": 30,
-        "anyOf": [
-            {"type": "null", "title": "Not Configured"},
-            {
-                "title": "Configured",
-                "type": "string"
+        },
+        "SerialNumber5": {
+            "title": "Transmit 5 Serial Number",
+            "description": "Default is empty. Set Transmit 5 Serial Number",
+            "propertyOrder": 30,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SerialNumber5"
             }
-        ],
-        "options": {
-            "infoText": "Key: SerialNumber5"
         }
     }
 }
