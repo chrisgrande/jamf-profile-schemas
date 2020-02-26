@@ -1,7 +1,7 @@
 {
     "title": "BBEdit (com.barebones.bbedit)",
     "description": "Bare Bones BBedit Application Settings",
-    "__version": "1.0",
+    "__version": "1.1",
     "__feedback": "cgrande@mxcc.edu",
     "type": "object",
     "options": {
@@ -17,109 +17,111 @@
             }
         }
     },
-    "BBEditRegisteredOwner:12.0": {
-        "title": "Registered Owner Name - Version 12.x",
-        "description": "Setst the owner name for BBEdit 12.x",
-        "propertyOrder": 10,
-        "anyOf": [
-            {"type": "null", "title": "Not Configured"},
-            {
-                "title": "Configured",
-                "type": "string"
+    "properties": {
+        "BBEditRegisteredOwner:12.0": {
+            "title": "Registered Owner Name - Version 12.x",
+            "description": "Setst the owner name for BBEdit 12.x",
+            "propertyOrder": 10,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: BBEditRegisteredOwner:12.0"
             }
-        ],
-        "options": {
-            "infoText": "Key: BBEditRegisteredOwner:12.0"
-        }
-    },
-    "BBEditSerialNumber:12.0": {
-        "title": "Serial Number - Version 12.x",
-        "description": "Sets serial number for BBedit 12.x",
-        "propertyOrder": 20,
-        "anyOf": [
-            {"type": "null", "title": "Not Configured"},
-            {
-                "title": "Configured",
-                "type": "Key Type"
+        },
+        "BBEditSerialNumber:12.0": {
+            "title": "Serial Number - Version 12.x",
+            "description": "Sets serial number for BBedit 12.x",
+            "propertyOrder": 20,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "Key Type"
+                }
+            ],
+            "options": {
+                "infoText": "Key: BBEditSerialNumber:12.x"
             }
-        ],
-        "options": {
-            "infoText": "Key: BBEditSerialNumber:12.x"
-        }
-    },
-    "BBEditRegisteredOwner:13.0": {
-        "title": "Registered Owner Name - Version 13.x",
-        "description": "Sets the owner name for BBEdit 13.x",
-        "propertyOrder": 30,
-        "anyOf": [
-            {"type": "null", "title": "Not Configured"},
-            {
-                "title": "Configured",
-                "type": "string"
+        },
+        "BBEditRegisteredOwner:13.0": {
+            "title": "Registered Owner Name - Version 13.x",
+            "description": "Sets the owner name for BBEdit 13.x",
+            "propertyOrder": 30,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: BBEditRegisteredOwner:13.0"
             }
-        ],
-        "options": {
-            "infoText": "Key: BBEditRegisteredOwner:13.0"
-        }
-    },
-    "BBEditSerialNumber:13.0": {
-        "title": "Serial Numnber - Version 13.x",
-        "description": "Sets serial number for BBedit 13.x",
-        "propertyOrder": 40,
-        "anyOf": [
-            {"type": "null", "title": "Not Configured"},
-            {
-                "title": "Configured",
-                "type": "string"
+        },
+        "BBEditSerialNumber:13.0": {
+            "title": "Serial Number - Version 13.x",
+            "description": "Sets serial number for BBedit 13.x",
+            "propertyOrder": 40,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: BBEditSerialNumber:13.0"
             }
-        ],
-        "options": {
-            "infoText": "Key: BBEditSerialNumber:13.0"
-        }
-    },
-    "SUEnableAutomaticChecks": {
-        "title": "Enable Automatic Software Update Checks",
-        "description": "Defaults to true. Set to false to disable automatic updates.",
-        "propertyOrder": 50,
-        "anyOf": [
-            {"type": "null", "title": "Not Configured"},
-            {
-                "title": "Configured",
-                "type": "boolean"
+        },
+        "SUEnableAutomaticChecks": {
+            "title": "Enable Automatic Software Update Checks",
+            "description": "Defaults to true. Set to false to disable automatic updates.",
+            "propertyOrder": 50,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SUEnableAutomaticChecks"
             }
-        ],
-        "options": {
-            "infoText": "Key: SUEnableAutomaticChecks"
-        }
-    },
-    "SUFeedURL": {
-        "title": "Software Update Feed URL",
-        "description": "Defaults to Bare Bones servers. With Automatic checking disabled a user can still run 'Check fo Updates...' from the BBEdit menu. To fully disable Software Update checking set this value to 'http://localhost'",
-        "propertyOrder": 60,
-        "anyOf": [
-            {"type": "null", "title": "Not Configured"},
-            {
-                "title": "Configured",
-                "type": "string"
+        },
+        "SUFeedURL": {
+            "title": "Software Update Feed URL",
+            "description": "Defaults to Bare Bones servers. With Automatic checking disabled a user can still run 'Check fo Updates...' from the BBEdit menu. To fully disable Software Update checking set this value to 'http://localhost'",
+            "propertyOrder": 60,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SUFeedURL"
             }
-        ],
-        "options": {
-            "infoText": "Key: SUFeedURL"
-        }
-    },
-    "UserDeclinedSandboxAccess": {
-        "title": "Disable Sandbox Prompt",
-        "description": "Defaults to none. Set to true to stop the first run Sandbox prompt (Version 12.6 or later). This just supresses the prompt and is best used in situations where BBEdit is just used as a simple text editor. Full access is required for BBEdit's full functionality. See https://www.barebones.com/support/bbedit/notes-12.6.html for more information.",
-        "propertyOrder": 70,
-        "anyOf": [
-            {"type": "null", "title": "Not Configured"},
-            {
-                "title": "Configured",
-                "type": "boolean"
+        },
+        "UserDeclinedSandboxAccess": {
+            "title": "Disable Sandbox Prompt",
+            "description": "Defaults to none. Set to true to stop the first run Sandbox prompt (Version 12.6 or later). This just supresses the prompt and is best used in situations where BBEdit is just used as a simple text editor. Full access is required for BBEdit's full functionality. See https://www.barebones.com/support/bbedit/notes-12.6.html for more information.",
+            "propertyOrder": 70,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: UserDeclinedSandboxAccess"
             }
-        ],
-        "options": {
-            "infoText": "Key: UserDeclinedSandboxAccess"
         }
     }
 }
