@@ -49,7 +49,7 @@
                 }
             ],
             "options": {
-                "infoText": "Key: AppleSoftwareUpdatesOnly"
+                "infoText": "Key: AggressiveUpdateNotificationDays"
             },
             "links": [{
                 "rel": "More information",
