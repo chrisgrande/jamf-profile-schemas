@@ -1,7 +1,7 @@
 {
     "title": "ManagedInstalls",
     "description": "Preference Domain: ManagedInstall.plist - Munki Configuration",
-    "__version": "1.0.1",
+    "__version": "1.0.2",
     "__feedback": "cgrande@mxcc.edu",
     "type": "object",
     "options": {
@@ -27,6 +27,25 @@
                 {
                     "title": "Configured",
                     "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: AppleSoftwareUpdatesOnly"
+            },
+            "links": [{
+                "rel": "More information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
+        },
+        "AggressiveUpdateNotificationDays": {
+            "title": "Number of Days Updates Need to be Pending before Aggressive Notifications Start",
+            "description": "Default is 14 days. Munki 5's more aggressive update behaviors begin when one or more updates have been pending for more than 14 days by default. Set it to 0 to never trigger the aggressive behavior.",
+            "propertyOrder": 15,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer"
                 }
             ],
             "options": {
