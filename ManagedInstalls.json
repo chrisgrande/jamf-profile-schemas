@@ -1,7 +1,7 @@
 {
     "title": "ManagedInstalls",
     "description": "Preference Domain: ManagedInstall.plist - Munki Configuration",
-    "__version": "1.0",
+    "__version": "1.0.1",
     "__feedback": "cgrande@mxcc.edu",
     "type": "object",
     "options": {
@@ -20,7 +20,7 @@
     "properties": {
         "AppleSoftwareUpdatesOnly": {
             "title": "Install Apple Software Updates Only",
-            "description": "Deafult is false. If true, only install updates from an Apple Software Update server. No Munki repository is needed or used.",
+            "description": "Default is false. If true, only install updates from an Apple Software Update server. No Munki repository is needed or used.",
             "propertyOrder": 10,
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
@@ -555,7 +555,7 @@
             }]
         },
         "SuppressLoginwindowInstall": {
-            "title": "Suppress Auto Install",
+            "title": "Suppress Loginwindow Install",
             "description": "Default is false. If true, Munki will not install items while idle at the loginwindow except for those marked for unattended_install or unattended_uninstall.",
             "propertyOrder": 300,
             "anyOf": [
