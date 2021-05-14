@@ -800,6 +800,25 @@
                 "rel": "More Information",
                 "href": "https://github.com/munki/munki/wiki/Preferences"
             }]
+        },
+        "EmulateProfileSupport": {
+            "title": "Attempt to emulate the functionality of Managed Preferences",
+            "description": "(New in Munki 5.2) If true, Munki will attempt to emulate the functionality of Managed Preferences from configuration profiles on Big Sur. See Configuration-Profile-Emulation for more info.",
+            "propertyOrder": 420,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: EmulateProfileSupport"
+            },
+            "links": [{
+                "rel": "More Information",
+                "href": "https://github.com/munki/munki/wiki/Preferences"
+            }]
         }
     }
 }
