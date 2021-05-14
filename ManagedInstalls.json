@@ -817,7 +817,7 @@
             },
             "links": [{
                 "rel": "More Information",
-                "href": "https://github.com/munki/munki/wiki/Preferences"
+                "href": "https://github.com/munki/munki/wiki/Configuration-Profile-Emulation"
             }]
         }
     }
